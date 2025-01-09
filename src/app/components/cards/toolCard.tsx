@@ -1,11 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { TiWeatherCloudy } from "react-icons/ti";
 import { TbMathSymbols } from "react-icons/tb";
 import { BiBitcoin } from "react-icons/bi";
 import { RiMovie2Line } from "react-icons/ri";
-import { Suspense } from "react";
-import ToolCardSkeleton from "../ui/loaders/toolCardSkeleton";
 
 interface ToolCardProps {
   title: string;

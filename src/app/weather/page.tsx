@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Header from "../components/ui/header";
 import LoadingData from "../components/ui/loaders/loadingData";
 import WeatherCard from "../components/cards/weatherCard";
-import type { Metadata } from "next";
 import BgLineEffect from "../components/ui/bgLineEffect/bgLineEffect";
 
 export default function Weather() {

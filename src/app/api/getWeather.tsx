@@ -1,31 +1,27 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import axios from 'axios';
-
-// Replace with your OpenWeatherMap API key
+import axios from "axios";
 
 export interface WeatherData {
-  // Define the structure of the weather data you expect from the API
   name: string;
   main: {
     temp: number;
     feels_like: number;
-    temp_min: number,
-    temp_max: number,
+    temp_min: number;
+    temp_max: number;
     humidity: number;
   };
   weather: {
-    main: string,
+    main: string;
     icon: string;
   };
   wind: {
-    speed: number,
-  },
+    speed: number;
+  };
   clouds: {
-    all: number,
+    all: number;
   }[];
 }
 
-const API_KEY = '666ff7d9bf7f6d8a98389c688448a732';
+const API_KEY = "666ff7d9bf7f6d8a98389c688448a732";
 
 const getWeather = async (city: string): Promise<WeatherData | null> => {
   try {
@@ -40,7 +36,7 @@ const getWeather = async (city: string): Promise<WeatherData | null> => {
 
     return data;
   } catch (error) {
-    console.error('Error fetching weather:', error);
+    console.error("Error fetching weather:", error);
     return null;
   }
 };

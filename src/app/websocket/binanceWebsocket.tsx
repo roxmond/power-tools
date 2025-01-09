@@ -9,7 +9,7 @@ import { CgLivePhoto } from "react-icons/cg";
 import { FaEthereum } from "react-icons/fa";
 import { RiBtcFill } from "react-icons/ri";
 import { RiBnbFill, RiXrpFill } from "react-icons/ri";
-import { SiSolana, SiDogecoin } from "react-icons/si";
+import { SiSolana } from "react-icons/si";
 import Timestamp from "@/app/utils/timestamp/timestamp";
 import PercentageCalculator from "@/app/utils/percentageCalculator/percentageCalculator";
 
@@ -43,14 +43,14 @@ export interface BinanceData {
   };
 }
 
-const iconMap: Record<string, React.ReactNode> = {
+/* const iconMap: Record<string, React.ReactNode> = {
   btcusdt: <RiBtcFill className="mr-2" />,
   ethusdt: <FaEthereum className="mr-2" />,
   bnbusdt: <RiBnbFill className="mr-2" />,
   solusdt: <SiSolana className="mr-2" />,
   xrpusdt: <RiXrpFill className="mr-2" />,
   // Add more icons for other supported symbols
-};
+}; */
 
 export default function BinanceWebsocket({ url, selectedSymbol }: Props) {
   const [data, setData] = useState<BinanceData | null>(null);
@@ -95,14 +95,13 @@ export default function BinanceWebsocket({ url, selectedSymbol }: Props) {
   const closePrice = round(kline.c);
   const highestPrice = round(kline.h);
   const lowestPrice = round(kline.l);
-  const volume = kline.v;
+
   const trades = kline.n;
   const eventTime = data.E;
   const formattedEventTime = Timestamp(eventTime);
   const startTime = kline.t;
-  const formattedStartTime = Timestamp(startTime);
+
   const closeTime = kline.T;
-  const formattedCloseTime = Timestamp(closeTime);
   const percentageChange = round(PercentageCalculator(openPrice, closePrice));
 
   const colorClass =

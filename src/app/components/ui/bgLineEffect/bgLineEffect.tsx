@@ -9,7 +9,7 @@ interface Sphere {
   color: string;
 }
 
-export default function bgLineEffect() {
+export default function BgLineEffect() {
   const [spheres, setSpheres] = useState<Sphere[]>([]);
 
   useEffect(() => {
@@ -31,6 +31,7 @@ export default function bgLineEffect() {
 
     generateSpheres();
   }, []);
+
   return (
     <div className="background-spheres absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
       {spheres.map((sphere, index) => (
