@@ -12,13 +12,13 @@ export interface WeatherData {
   weather: {
     main: string;
     icon: string;
-  };
+  }[];
   wind: {
     speed: number;
   };
   clouds: {
     all: number;
-  }[];
+  };
 }
 
 const API_KEY = "666ff7d9bf7f6d8a98389c688448a732";

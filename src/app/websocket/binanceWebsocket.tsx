@@ -99,9 +99,7 @@ export default function BinanceWebsocket({ url, selectedSymbol }: Props) {
   const trades = kline.n;
   const eventTime = data.E;
   const formattedEventTime = Timestamp(eventTime);
-  const startTime = kline.t;
 
-  const closeTime = kline.T;
   const percentageChange = round(PercentageCalculator(openPrice, closePrice));
 
   const colorClass =
