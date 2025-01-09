@@ -15,7 +15,56 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-image {
+  background-image: url("/bg-weather.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image {
+}
+
+.graph {
+  background-image: url("/graph.png");
+  background-size: cover;
+}
+
+.glassphorm {
+  background: rgba(100, 133, 144, 0.33);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  box-shadow: 0px 0px 5px 0px #e8eaeb;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px 0 #0a0a0a;
+}
+
+.background-spheres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Prevent spheres from interfering with clicks */
+}
+
+.background-spheres > div {
+  position: absolute;
+  /* border-radius: 50%; */
+  border: 1px solid;
+  rotate: 45deg;
+  /* background-color: rgba(255, 255, 255, 0.1); */ /* Light gray with transparency */
+  filter: blur(var(--blur)); /* Variable blur for each sphere */
+  transform: translate(var(--x), var(--y)); /* Random position */
+  width: var(--size);
+  /* height: var(--size); */
 }
