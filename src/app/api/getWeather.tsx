@@ -21,7 +21,7 @@ export interface WeatherData {
   };
 }
 
-const API_KEY = "666ff7d9bf7f6d8a98389c688448a732";
+const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
 const getWeather = async (city: string): Promise<WeatherData | null> => {
   try {
