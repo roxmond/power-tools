@@ -21,12 +21,12 @@ export interface WeatherData {
   };
 }
 
-const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+const API = process.env.NEXT_PUBLIC_WEATHER;
 
 const getWeather = async (city: string): Promise<WeatherData | null> => {
   try {
     const response = await axios.get<WeatherData>(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=metric`
     );
     const data = response.data;
     data.main.temp = Math.round(data.main.temp);
