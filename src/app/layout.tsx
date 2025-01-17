@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Power Tools",
   description:
     "Utilizing APIs, Websockets and Maths to create powerfull tools we need every day.",
+  openGraph: {
+    images: "/pt-img.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +40,7 @@ export default function RootLayout({
           property="og:description"
           content="Utilizing APIs, Websockets and Maths to create powerfull tools we need every day."
         />
-        <meta property="og:image" content="/pt-img.png" />
+        <meta property="og:image" content="./pt-img.png" />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
